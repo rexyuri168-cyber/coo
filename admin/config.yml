@@ -1,16 +1,17 @@
 backend:
   name: git-gateway
-  branch: main # 如果你的主分支叫 master，請改為 master
+  branch: main
 
-media_folder: "public/images" # 圖片存放位置
+media_folder: "public/images"
 public_folder: "/images"
 
 collections:
-  - name: "blog" # 這是範例，你可以之後再改
+  - name: "blog"
     label: "文章"
     folder: "content/blog"
     create: true
     fields:
       - { label: "標題", name: "title", widget: "string" }
+      - { label: "封面圖片", name: "thumbnail", widget: "image" } # <--- 加入這一行
       - { label: "日期", name: "date", widget: "datetime" }
       - { label: "內容", name: "body", widget: "markdown" }
