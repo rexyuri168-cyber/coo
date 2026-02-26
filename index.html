@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<head>
+<head><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chloe — 自由創作者</title>
@@ -9,7 +9,17 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--cream:#faf8f4;--stone:#e8e4dc;--clay:#c4b8a8;--dark:#1a1714;--mid:#5a5550;--accent:#b8956a;--accent-light:#e8d5be}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:28px 56px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,244,0.9);backdrop-filter:blur(8px)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;letter-spacing:.05em;color:var(--dark);text-decoration:none}
 .nav-links{display:flex;gap:40px;list-style:none}
